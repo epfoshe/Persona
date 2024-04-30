@@ -9,13 +9,16 @@ class Rain_action():
         pygame.init
 
         """Create Screen"""
+        ##STORE INTO SOMETHING
         self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
-        self.screen_width
-        self.screen_height
+        self.screen_width = self.screen.get_rect().width 
+        self.screen_height = self.screen.get_rect().height 
 
         """Set the caption"""
+        pygame.display.set_caption("Rain_action")
 
         """Create Grouping Together"""
+        self.raindrop = pygame.sprite.RenderPlain
 
         #Add music and rain?
 
