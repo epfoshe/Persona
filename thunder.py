@@ -25,8 +25,10 @@ class Rain_action():
       
     def music(self):
         """Create Background Music"""
+        #ADD TRADITIONAL MUSIC .("musicfile.wav")
         pygame.mixer.music.load()
-        pygame.mixer.music.set_volume()
+        pygame.mixer.music.set_volume(.2)
+        pygame.mixer.music.play
 
 
     def Rain(self):
@@ -34,8 +36,31 @@ class Rain_action():
 
 
 
-    def _check_events(self):
-        """distinguish updates """
+
+    def _check_events_thunder(self):
+        """Add Thunder Game Loops """
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+           
+           #Q to quit
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
+                    pygame.quit()
+
+
+    def _create_rain(self):
+        """dd"""
+    
+    def _update_rain(self):
+        """ss"""
+    
+    def _change_pos(self):
+        """sss"""
+    
+    def _update_(self):
+        """ddd"""
+
 
 
 
