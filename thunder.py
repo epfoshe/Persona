@@ -21,12 +21,18 @@ class Rain_action():
         self.raindrop = pygame.sprite.RenderPlain
 
         #Add music and rain?
+        self.music()
+      
+    def music(self):
+        """Create Background Music"""
+        pygame.mixer.music.load()
+        pygame.mixer.music.set_volume()
+
 
     def Rain(self):
         """Loop Rain Object"""
 
-    def music(self):
-        """Create Background Music"""
+
 
     def _check_events(self):
         """distinguish updates """
