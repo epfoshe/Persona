@@ -9,8 +9,15 @@ class Rain_action():
         pygame.init
 
         """Create Screen"""
+        self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+        self.screen_width
+        self.screen_height
 
         """Set the caption"""
+
+        """Create Grouping Together"""
+
+        #Add music and rain?
 
     def Rain(self):
         """Loop Rain Object"""
@@ -23,8 +30,7 @@ class Rain_action():
 
 
 
-def main(): 
-
 
 if __name__ == "__main__": 
-    main()
+    ra = Rain_action()
+    ra.Rain
