@@ -17,6 +17,8 @@ class Rain_action():
         """Set the caption"""
         pygame.display.set_caption("Rain_action")
 
+        """Set Main Background"""
+
         """Create Grouping Together"""
         self.raindrop = pygame.sprite.RenderPlain
 
@@ -47,6 +49,14 @@ class Rain_action():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     pygame.quit()
+
+            elif event.type == pygame.K_SLASH:
+                pygame.mixer.music.load()
+                pygame.image.load()
+                pygame.mixer.music.play
+
+
+            #Activate key to start thunder ("thunder.wav")                   
 
 
     def _create_rain(self):
