@@ -18,6 +18,7 @@ class Rain_action():
         pygame.display.set_caption("Rain_action")
 
         """Set Main Background"""
+        pygame.image.load("jason_scheier_raining.jpg").convert
 
         """Create Grouping Together"""
         self.raindrop = pygame.sprite.RenderPlain
@@ -39,6 +40,7 @@ class Rain_action():
 
 
 
+
     def _check_events_thunder(self):
         """Add Thunder Game Loops """
         for event in pygame.event.get():
@@ -49,6 +51,8 @@ class Rain_action():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     pygame.quit()
+
+            #Activate key to start thunder ("thunder.wav")
 
             elif event.type == pygame.K_SLASH:
                 pygame.mixer.music.load()
