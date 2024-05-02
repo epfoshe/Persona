@@ -2,6 +2,7 @@ import pygame
 import pygame.sprite import Sprite
 import random
 
+
 class Raindrop(Sprite):
    
     """Create Sprite of Raindrop"""
@@ -14,21 +15,20 @@ class Raindrop(Sprite):
         self.rectangle = self.image.get_rect()
 
         """WIDTH AND HEIGHT"""
-        self.rect.x = self.rectangle.width 
-        self.rect.y = self.rectangle.height 
+        self.rect.x = random.randint(0, self.screen.get_width() - self.rect.width)
+        self.rect.y = random.randint(-self.rect.height, -5)
 
         """float?"""
     
 
     def update(self):
         """Raindrop Sprite Moves Downward"""
-        self.y += self.raindrop_speed
-        self.rectangle.y = self.y
+        self.rect.y += self.raindrop_speed
+        if self.rect.y > self.screen.get_height():
+            self.rect.y = random.randint(-self.rect.height, -5)
+            self.rect.x = random.randint(0, self.screen.get_width() - self.rect.width)
 
-    def check_edges(self):
-        """Bottom of the screen"""
-        screen_rectangle = self.screen.get_rect() 
-        return self.rect.bottom > screen_rectangle.bottom
+   
 
 
  

@@ -23,19 +23,24 @@ class Rain_action():
         """Create Grouping Together"""
         self.raindrop = pygame.sprite.RenderPlain
 
+        """Preparing for Frame Rate"""
+        clock = pygame.time.Clock()
+
         #Add music and rain?
         self.music()
+        self._create_rain
       
     def music(self):
         """Create Background Music"""
         #ADD TRADITIONAL MUSIC .("musicfile.wav")
         pygame.mixer.music.load()
         pygame.mixer.music.set_volume(.2)
-        pygame.mixer.music.play
+        pygame.mixer.music.play(-1)
 
 
     def Rain(self):
-        """Loop Rain Object"""
+        """Loop Rain Object for the Infinite Effect"""
+    
 
 
 
@@ -55,17 +60,39 @@ class Rain_action():
             #Activate key to start thunder ("thunder.wav")
 
             elif event.type == pygame.K_SLASH:
+                #ADD THUNDER SOUND EFFECT
                 pygame.mixer.music.load()
                 pygame.image.load()
                 pygame.mixer.music.play
 
 
-            #Activate key to start thunder ("thunder.wav")                   
+            #Activate key to start thunder ("thunder.wav")    
+                           
 
 
     def _create_rain(self):
-        """dd"""
-    
+        """Link raindrop.py to thunder.py
+        Then find the horizontal space for the rain particle per row
+        Then find the vertical space (y) and number of rows 
+        Create a loop"""
+        #Think like a grid method we learned 
+        raindrop = Raindrop(self)
+
+
+    def _create_raindrops(self):
+        """Creates the actual raindrop in the screen"""
+        raindrop = Raindrop(self)
+        
+        #Randomly choose placement for the raindrops
+        raindrop.x = random.randrange(0, self.screen_width)
+        raindrop.rect.x = raindrop.x 
+        raindrop.y = random.randrange(0, self.screen_height)
+        self.raindrop.add(raindrop)
+
+
+
+
+
     def _update_rain(self):
         """ss"""
     
