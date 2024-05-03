@@ -1,7 +1,7 @@
 import random
 import pygame
 
-from raindrop import Raindrop
+from rain_source import Raindrop
 from PIL import Image 
 
 class Rain_action():
@@ -10,7 +10,7 @@ class Rain_action():
 
         """Create Screen"""
         ##STORE INTO SOMETHING
-        self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+        self.screen = pygame.display.set_mode((1920,1080), pygame.FULLSCREEN)
         self.screen_width = self.screen.get_rect().width 
         self.screen_height = self.screen.get_rect().height 
 
@@ -21,7 +21,7 @@ class Rain_action():
         pygame.image.load("jason_scheier_raining.jpg").convert
 
         """Create Grouping Together"""
-        self.raindrop = pygame.sprite.RenderPlain
+        self.raindrops = pygame.sprite.RenderPlain
 
         """Preparing for Frame Rate"""
         clock = pygame.time.Clock()
@@ -77,6 +77,19 @@ class Rain_action():
         Create a loop"""
         #Think like a grid method we learned 
         raindrop = Raindrop(self)
+        raindrop_width , raindrop_height = raindrop.rect.size
+        drop_number = self.screen_width // (2 * raindrop_width)
+
+        number_row = self.screen_height // (2 * raindrop_height)
+
+        #Create loop for the rain grid
+        for row_number in range(number_row):
+            for drop_amount in range(drop_number):
+                self._create_raindrops(row_number, drop_amount)
+
+
+
+
 
 
     def _create_raindrops(self):
@@ -94,13 +107,22 @@ class Rain_action():
 
 
     def _update_rain(self):
-        """ss"""
+        """Update the rain position"""
+        self.raindrops.update()
+
+        for _raindrops in self.raindrops.sprites():
+           if _raindrops.check_edges():
+            self._change_pos
+            
     
-    def _change_pos(self):
-        """sss"""
+    def _change_pos(self, _raindrops):
+        """Changes the position of the raindrop to the top of the screen"""
+        _raindrops.y = 0 
+
+
     
-    def _update_(self):
-        """ddd"""
+    def _update_screen(self):
+        """Screen updates to display actual rain"""
 
 
 

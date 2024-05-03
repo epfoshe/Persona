@@ -25,6 +25,8 @@ class Raindrop(Sprite):
         """Raindrop Sprite Moves Downward"""
         self.y += self.raindrop_speed
         self.y = self.rect.y 
+
+    def check_edges(self): 
        
    
 
