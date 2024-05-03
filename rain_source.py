@@ -27,6 +27,10 @@ class Raindrop(Sprite):
         self.y = self.rect.y 
 
     def check_edges(self): 
+        """If the raindrop reaches the bottom of the screen cause the raindrop to reposition"""
+        screen_rectangle = self.screen.get_rect()
+        if self.rectangle.bottom >= screen_rectangle.bottom: 
+            return True 
        
    
 

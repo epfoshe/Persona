@@ -18,7 +18,8 @@ class Rain_action():
         pygame.display.set_caption("Rain_action")
 
         """Set Main Background"""
-        pygame.image.load("jason_scheier_raining.jpg").convert
+        background = pygame.image.load("jason_scheier_raining.jpg").convert
+        self.screen.blit(background)
 
         """Create Grouping Together"""
         self.raindrops = pygame.sprite.RenderPlain
@@ -40,6 +41,10 @@ class Rain_action():
 
     def Rain(self):
         """Loop Rain Object for the Infinite Effect"""
+        while True:
+            self._check_events_thunder()
+            self._update_rain()
+            self._update_screen()
     
 
 
@@ -122,7 +127,12 @@ class Rain_action():
 
     
     def _update_screen(self):
-        """Screen updates to display actual rain"""
+        """Screen updates to display actual rain
+        Draws raindrops in and flips the display"""
+        self.raindrops.draw(self.screen)
+        pygame.display.flip()
+
+
 
 
 
