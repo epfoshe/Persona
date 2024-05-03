@@ -18,8 +18,8 @@ class Rain_action():
         pygame.display.set_caption("Rain_action")
 
         """Set Main Background"""
-        background = pygame.image.load("jason_scheier_raining.jpg").convert
-        self.screen.blit(background)
+        self.background_image = pygame.image.load("jason_scheier_raining.jpg").convert
+        self.screen.blit(self.background_image, (0,0))
 
         """Create Grouping Together"""
         self.raindrops = pygame.sprite.RenderPlain
@@ -131,6 +131,7 @@ class Rain_action():
         Draws raindrops in and flips the display"""
         self.raindrops.draw(self.screen)
         pygame.display.flip()
+        
 
 
 

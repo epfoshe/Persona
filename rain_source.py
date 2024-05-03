@@ -1,5 +1,5 @@
 import pygame
-import pygame.sprite import Sprite 
+from pygame.sprite import Sprite 
 import random
 
 
@@ -18,7 +18,7 @@ class Raindrop(Sprite):
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
-        """float?"""
+        
     
 
     def update(self):
