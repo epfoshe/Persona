@@ -125,7 +125,7 @@ class Rain_action():
 
         for _raindrops in self.raindrops.sprites():
            if _raindrops.check_edges():
-            self._change_pos
+            self._change_pos(_raindrops)
             
     
     def _change_pos(self, _raindrops):
