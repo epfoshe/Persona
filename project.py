@@ -137,11 +137,16 @@ class Rain_action():
     def _update_screen(self):
         """Screen updates to display actual rain
         Draws raindrops in and flips the display"""
+        self.screen.blit(self.background_image, (0, 0))
         self.raindrops.draw(self.screen)
         pygame.display.flip()
-        
+        self.clock.tick(30)
 
-
+def main():
+    pygame.init()
+    ra = Rain_action()
+    ra.Rain()
+    pygame.quit()
 
 
 
