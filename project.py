@@ -100,17 +100,7 @@ class Rain_action():
         for row_number in range(number_row):
             for drop_amount in range(drop_number):
                 self._create_raindrops(row_number, drop_amount)
-        
-        raindrop.x = random.randrange(0, self.screen_width)
-        raindrop.rect.x = raindrop.x
-        raindrop.y = random.randrange(0, self.screen_height)
-        raindrop.rect.y =  raindrop.y
-        self.raindrops.add(raindrop)
-
-        self.raindrops.add(raindrop)
-
-
-
+     
 
 
 
@@ -120,9 +110,10 @@ class Rain_action():
         
         #Randomly choose placement for the raindrops
         raindrop.x = random.randrange(0, self.screen_width)
-        raindrop.rect.x = raindrop.x 
+        raindrop.rect.x = raindrop.x
         raindrop.y = random.randrange(0, self.screen_height)
-        self.raindrop.add(raindrop)
+        raindrop.rect.y =  raindrop.y
+        self.raindrops.add(raindrop)
 
 
 
