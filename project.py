@@ -92,14 +92,22 @@ class Rain_action():
         #Think like a grid method we learned 
         raindrop = Raindrop(self)
         raindrop_width , raindrop_height = raindrop.rect.size
-        drop_number = self.screen_width // (2 * raindrop_width)
+        drop_number = self.screen_width // (4 * raindrop_width)
 
-        number_row = self.screen_height // (2 * raindrop_height)
+        number_row = self.screen_height // (4 * raindrop_height)
 
         #Create loop for the rain grid
         for row_number in range(number_row):
             for drop_amount in range(drop_number):
                 self._create_raindrops(row_number, drop_amount)
+        
+        raindrop.x = random.randrange(0, self.screen_width)
+        raindrop.rect.x = raindrop.x
+        raindrop.y = random.randrange(0, self.screen_height)
+        raindrop.rect.y =  raindrop.y
+        self.raindrops.add(raindrop)
+
+        self.raindrops.add(raindrop)
 
 
 
