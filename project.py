@@ -75,7 +75,11 @@ class Rain_action():
                     self.background_image = pygame.transform.scale(self.background_image, (1920 , 1080))
 
             elif event.type == pygame.KEYUP:
-                if event.key == pygame.KSLASH: 
+                if event.key == pygame.K_SLASH:
+                    self.background_image = pygame.image.load ("jason_scheier_raining.jpg").convert()
+                    self.background_image = pygame.transform.scale(self.background_image, (1920 , 1080))
+                    pygame.mixer.music.load("rain_sounds.wav")
+                    pygame.mixer.music.play()
             #Activate key to start thunder ("thunder.wav")    
                            
 
