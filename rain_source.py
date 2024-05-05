@@ -12,7 +12,7 @@ class Raindrop(Sprite):
         self.screen = rain.screen
         self.raindrop_speed = random.randrange(5,10)
         self.image = pygame.image.load("Raindrop.png")
-        self.rectangle = self.image.get_rect()
+        self.rect = self.image.get_rect()
 
         """WIDTH AND HEIGHT"""
         self.rect.x = self.rect.width
@@ -28,8 +28,8 @@ class Raindrop(Sprite):
 
     def check_edges(self): 
         """If the raindrop reaches the bottom of the screen cause the raindrop to reposition"""
-        screen_rectangle = self.screen.get_rect()
-        if self.rectangle.bottom >= screen_rectangle.bottom: 
+        screen_rect = self.screen.get_rect()
+        if self.rect.bottom >= screen_rect.bottom: 
             return True 
        
    

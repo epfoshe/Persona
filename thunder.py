@@ -7,6 +7,7 @@ from PIL import Image
 class Rain_action():
     def __init__(self):
         pygame.init
+        
 
         """Create Screen"""
         ##STORE INTO SOMETHING
@@ -19,7 +20,7 @@ class Rain_action():
 
         """Set Main Background"""
         self.background_image = pygame.image.load("jason_scheier_raining.jpg").convert
-        self.screen.blit(self.background_image, (0,0))
+       
 
         """Create Grouping Together"""
         self.raindrops = pygame.sprite.RenderPlain
@@ -28,13 +29,14 @@ class Rain_action():
         clock = pygame.time.Clock()
 
         #Add music and rain?
+        pygame.mixer.init()
         self.music()
         self._create_rain
       
     def music(self):
         """Create Background Music"""
         #ADD TRADITIONAL MUSIC .("musicfile.wav")
-        pygame.mixer.music.load()
+        pygame.mixer.music.load("rain_sounds.wav")
         pygame.mixer.music.set_volume(.2)
         pygame.mixer.music.play(-1)
 
@@ -56,6 +58,7 @@ class Rain_action():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                exit(0)
            
            #Q to quit
             elif event.type == pygame.KEYDOWN:
@@ -66,8 +69,8 @@ class Rain_action():
 
             elif event.type == pygame.K_SLASH:
                 #ADD THUNDER SOUND EFFECT
-                pygame.mixer.music.load()
-                pygame.image.load()
+                pygame.mixer.music.load("rain_sounds.wav")
+                pygame.image.load("jason_scheier_thunder.jpg").convert()
                 pygame.mixer.music.play
 
 
