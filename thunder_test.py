@@ -2,6 +2,7 @@ import random
 import pygame
 
 from rain_source import Raindrop
+from random import randint
 from pygame.locals import *
 
 class Rain_action():
